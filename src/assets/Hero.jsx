@@ -1,9 +1,10 @@
 import React from "react";
-import Cardnew from "./Cardnew";
+import { motion } from "framer-motion";
 import { useState } from "react";
-import { motion, transform } from "framer-motion";
-import Img from "./assets/puna_naval.jpg"; // Adjust the path as necessary
-import dImg from "./assets/RA-22811.jpg"; // Adjust the path as necessary
+import Cardnew from "./Cardnew";
+
+import Img from "./helicopter1.jpg"; // Adjust the path as necessary
+import dImg from "./helicoter2.jpg"; // Adjust the path as necessary
 const images= [Img, dImg,Img,dImg]; // Array of images to be passed to the Card component
 
 
