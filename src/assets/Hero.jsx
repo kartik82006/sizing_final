@@ -13,14 +13,14 @@ function Hero() {
   const [showCard,setShowCard] = useState(false); 
 
   return (
-    <div className="flex flex-row justify-center items-center font-bold font-delius-regular overflow-visible">
-      
+    <div className="flex border-2 border-[#8DBCC7] flex-row justify-center items-center font-bold font-delius-regular overflow-visible overflow-y-scroll w-full">
+
       {/* Left Section: Slide in from left */}
       <motion.div
         initial={{ x: -200, y: 20, opacity: 0 }}
         animate={{ x: 0, y: 0, opacity: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="hero m-2 pt-14 border-2 border-[#8DBCC7] bg-[#B3C8CF] h-screen flex-[6] overflow-y-scroll text-center justify-center rounded-lg"
+        className="hero m-2 pt-14 border-2 border-[#8DBCC7] bg-[#B3C8CF] flex-[6] overflow-y-scroll text-center justify-center rounded-lg"
       >
         <h1 className="text-5xl font-bold">Welcome to the 
           <span className="text-[#1995AD]"> Sizing Code</span>
@@ -41,7 +41,7 @@ There are many variations of passages of Lorem Ipsum available, but the majority
       </motion.div>
 
       {/* Right Section: Slide in from right */}
-    <Cardnew className="flex m-2 pt-14 border-2 border-[#8DBCC7] bg-[#B3C8CF] h-screen flex-[4] overflow-y-scroll overflow-visible text-center justify-center rounded-lg"/>
+       <Cardnew className="flex flex-col border-2 border-[#8DBCC7] bg-[#B3C8CF] flex-[4] overflow-y-scroll text-center justify-center rounded-lg h-full" />
 
     </div>
   );
