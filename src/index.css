@@ -1,11 +1,10 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: #1995AD;
+  background-color: #F0EBE3;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,21 +12,37 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+body {
+  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none; 
+  margin-bottom: 25vh; /* IE and Edge */
+}
+
+
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #1995AD;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #1995AD;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+.edu-nsw-act-hand-pre-400 {
+  font-family: "Edu NSW ACT Hand Pre", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.edu-nsw-act-hand-pre-700 {
+  font-family: "Edu NSW ACT Hand Pre", cursive;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }
 
 h1 {
@@ -65,4 +80,36 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.font-delius {
+  font-family: 'Delius', cursive;
+}
+.font-delius-regular {
+  font-family: "Delius", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.card {
+  transform-style: preserve-3d;
+}
+
+.card-list{
+  transform-style: preserve-3d;
+  transition: .5s;
+  filter: brightness(1);
+  
+}
+
+.perspective {
+  perspective: 1000px;
+}
+.card-list:hover {
+  transform: translateZ(200px);
+}
+.card-list:hover + *{
+  transform: translateY(-50px);
+  filter:brightness(0.75)
+
 }
