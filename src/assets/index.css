@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   line-height: 1.5;
   font-weight: 400;
@@ -120,3 +121,4 @@ button:focus-visible {
   scale(0.9);
 
 }
+

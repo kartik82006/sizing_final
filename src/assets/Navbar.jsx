@@ -1,11 +1,21 @@
 import React from "react";
-import { motion } from "framer-motion";
-// Navbar.jsx
+import logo2 from "../images/logo.png"; // Ensure path is correct
+
 function Navbar() {
   return (
-    <nav className="m-2 rounded-xl fixed top-0 left-0 right-0 width-[90%] bg-white shadow-md z-50 h-16 p-10  flex items-center">
-      <h1 className="text-4xl font-bold p-10 ">MySite</h1>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#E5E1DA] rounded-b-xl shadow-md px-4 sm:px-6 lg:px-10 mt-1 mx-2">
+      <div className="flex items-center h-20 sm:h-24 lg:h-28 max-w-[1440px] mx-auto rounded-lg">
+        <img
+          src={logo2}
+          alt="Logo"
+          className="h-10 sm:h-12 lg:h-14 w-auto object-contain"
+        />
+        <h1 className="ml-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-delius">
+          SiZing CoDe
+        </h1>
+      </div>
     </nav>
-  )
+  );
 }
+
 export default Navbar;
