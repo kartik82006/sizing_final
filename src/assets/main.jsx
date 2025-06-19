@@ -7,7 +7,7 @@ import Navbar from './Navbar.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Navbar />
-    <div className="bg-red-500 text-white p-4 rounded-sm text-center ">Tailwind Test: If this is red, Tailwind CDN works!</div>
+    <div className="bg-red-500 text-white p-4 rounded-sm text-center "></div>
     <Hero />
   </StrictMode>,
 )

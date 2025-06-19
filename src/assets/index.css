@@ -97,6 +97,8 @@ button:focus-visible {
 
 .card {
   transform-style: preserve-3d;
+  transform:perspective(100px);
+  
 }
 
 .card-list{
@@ -104,16 +106,17 @@ button:focus-visible {
   transition: .5s;
   filter: brightness(1);
   
+  
 }
 
-.perspective {
-  perspective: 1000px;
-}
 .card-list:hover {
-  transform: translateZ(200px);
+  transform: translateZ(300px);
+  transition: .5s;
+  scale:(1.5);
 }
 .card-list:hover + *{
-  transform: translateY(-50px);
+  transform: translateY(40px);
   filter:brightness(0.75)
+  scale(0.9);
 
 }

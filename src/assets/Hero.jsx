@@ -13,14 +13,13 @@ function Hero() {
   const [showCard,setShowCard] = useState(false); 
 
   return (
-    <div className="flex border-2 border-[#8DBCC7] flex-row justify-center items-center font-bold font-delius-regular overflow-visible overflow-y-scroll w-full">
-
+    <div className="flex flex-row justify-center items-center mt-[5%] md:flex-col lg:flex-row font-bold font-delius-regular overflow-y-scroll h-[80vh] box-border">
       {/* Left Section: Slide in from left */}
       <motion.div
         initial={{ x: -200, y: 20, opacity: 0 }}
         animate={{ x: 0, y: 0, opacity: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="hero m-2 pt-14 border-2 border-[#8DBCC7] bg-[#B3C8CF] flex-[6] overflow-y-scroll text-center justify-center rounded-lg"
+        className="hero m-2 pt-14 border-2 border-[#8DBCC7] bg-[#B3C8CF] flex-[6] h-full overflow-y-scroll items-start text-center justify-center rounded-lg box-border"
       >
         <h1 className="text-5xl font-bold">Welcome to the 
           <span className="text-[#1995AD]"> Sizing Code</span>
@@ -39,10 +38,8 @@ The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for t
 Where can I get some?
 There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
       </motion.div>
-
       {/* Right Section: Slide in from right */}
-       <Cardnew className="flex flex-col border-2 border-[#8DBCC7] bg-[#B3C8CF] flex-[4] overflow-y-scroll text-center justify-center rounded-lg h-full" />
-
+      <Cardnew className="m-2 border-2 border-[#8DBCC7] bg-[#B3C8CF] flex-[4] h-full overflow-y-scroll text-center justify-center rounded-lg box-content" />
     </div>
   );
 }

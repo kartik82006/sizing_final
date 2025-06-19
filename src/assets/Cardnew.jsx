@@ -2,26 +2,25 @@ import React from "react";
 import image1 from "./helicopter1.jpg";
 import image2 from "./helicoter2.jpg";
 
-const images = [image1, image2, image1, image2];
+const images = [image1, image2, image1,image2];
 
 function Cardnew({ className = "" }) {
   return (
-    <div className={`flex flex-col bg-[#E5E1DA] ${className}`}>
-      {/* Apply perspective to a wrapper around `.card` */}
-      <div className="w-full h-full flex items-center justify-center perspective">
-        <div className="card w-full flex flex-col items-center justify-center bg-[#E5E1DA] rounded-lg shadow-lg ">
-          {images.map((image, index) => (
-            <div key={index}
-              className="card-list w-full rounded-xl flex overflow-visible relative"
-            >
-              <img
-                src={image}
-                className="w-full flex rounded-xl hover:scale-105 transition-transform duration-300"
-                alt="card"
-              />
-            </div>
-          ))}
-        </div>
+    <div className={`flex flex-col bg-[#E5E1DA] ${className} h-full overflow-hidden box-border`}>
+      <div className="h-[700px] p-1 flex flex-col items-center justify-start border-2 border-gray-300 overflow-y-scroll p-0 m-0 box-border gap-4">
+        {images.map((image, index) => (
+          <div key={index}
+            className="card-list w-[80%] aspect-[4/3] md:max-h-[200px] lg:max-h-[240px] flex-shrink-0 rounded-3xl flex relative p-0 m-0 box-border overflow-hidden"
+          >
+            <img
+              src={image}
+              className="w-full h-full block object-contain md:hover:scale-125 lg:hover:scale-150
+               transition-transform duration-300 box-border rounded-3xl"
+              alt="card"
+              style={{overflow: 'visible'}}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
