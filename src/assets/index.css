@@ -8,8 +8,8 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: #1995AD;
-  background-color: #F0EBE3;
+  color: #2C2C2C;
+  background-color: white;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -106,8 +106,6 @@ button:focus-visible {
   transform-style: preserve-3d;
   transition: .5s;
   filter: brightness(1);
-  
-  
 }
 
 .card-list:hover {
@@ -122,3 +120,27 @@ button:focus-visible {
 
 }
 
+.fade-in-left {
+    opacity: 0;
+    transform: translate(50px,50px);
+    animation: fadeInLeft 1s ease-out forwards;
+  }
+
+  @keyframes fadeInLeft{
+    to {
+      opacity: 1;
+      transform: translate(0,0);
+    }
+  }
+
+  .fade-in-navbar{
+    opacity:0;
+    transform:translateY(50px);
+    animation:fadeInNavbar 1s ease-out forwards;
+  }
+  @keyframes fadeInNavbar{
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

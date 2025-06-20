@@ -7,7 +7,7 @@ import Navbar from './Navbar.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Navbar />
-    <div className="bg-red-500 text-white p-4 rounded-sm text-center "></div>
+    <div className="bg-[#1995AD] text-white p-14 rounded-sm text-center "></div>
     <Hero />
   </StrictMode>,
 )
