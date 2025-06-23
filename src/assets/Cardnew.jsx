@@ -13,25 +13,26 @@ const images = [{title:"Single Main Rotor",desc:`A single main rotor helicopter 
 
 function Cardnew({ className = "" }) {
   return (
-    <div className={`flex flex-col bg-[#92C7CF] ${className} h-full overflow-hidden box-border`}>
-  <div className="h-[700px] p-1 flex flex-col items-center justify-start border-2 border-gray-300 overflow-y-scroll p-0 m-0 box-border gap-4">
+    <div className={`flex bg-[#222831] ${className} h-full overflow-hidden box-border`}>
+  <div className=" p-1 flex flex-row box-border gap-4">
+    {/* <h1 className="text-2xl font-bold flex bg-[#FFD369]">Select the configuration</h1> */}
     {images.map((imagesrc, index) => (
       <a
   key={index}
   href={`#${imagesrc.title.toLowerCase().replace(/\s+/g, '-')}`}
-  className="card-list w-[80%] aspect-[4/3] md:max-h-[200px] lg:max-h-[240px] flex-shrink-0 rounded-3xl flex relative p-0 m-0 box-border overflow-visible group cursor-pointer"
+  className="card-list flex-shrink-0 rounded-3xl flex relative p-2 m-8 box-border group cursor-pointer"
 >
   <img
     src={imagesrc.image}
-    className="reflect-below w-full h-full block object-contain md:hover:scale-125 lg:hover:scale-150
+    className="reflect-below flex object-cover md:hover:scale-125 lg:hover:scale-130
      transition-transform duration-300 box-border rounded-3xl"
     alt="card"
   />
 
   {/* Overlay */}
   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-black bg-opacity-20 border-2 border-white backdrop-blur-xl rounded-3xl transition-opacity duration-300 flex items-center justify-center pointer-events-none flex-col object-cover">
-    <h1 className="text-white text-3xl p-2 flex justify-left">{imagesrc.title}</h1>
-    <p className="text-white text-lg p-2 flex justify-left">{imagesrc.desc}</p>
+    <h1 className="text-white text-xl p-2 flex justify-left">{imagesrc.title}</h1>
+    <p className="text-white text-md p-2 flex justify-left">{imagesrc.desc}</p>
   </div>
 </a>
 

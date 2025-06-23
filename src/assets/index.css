@@ -24,6 +24,7 @@ body {
   scrollbar-width: none;     /* Firefox */
   -ms-overflow-style: none; 
   margin-bottom: 25vh; /* IE and Edge */
+  background-color: #FFD369;
 }
 
 
@@ -41,10 +42,7 @@ a:hover {
 }
 
 .edu-nsw-act-hand-pre-700 {
-  font-family: "Edu NSW ACT Hand Pre", cursive;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
+  font-family: "sans-serif";
 }
 
 h1 {
@@ -84,14 +82,7 @@ button:focus-visible {
   }
 }
 
-.font-delius {
-  font-family: 'Delius', cursive;
-}
-.font-delius-regular {
-  font-family: "Delius", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
+
 
 .card {
   transform-style: preserve-3d;
@@ -111,7 +102,7 @@ button:focus-visible {
   scale:(1.5);
 }
 .card-list:hover + *{
-  transform: translateY(40px);
+  transform: translateX(3vw);
   filter:brightness(0.75)
   scale(0.9);
 
