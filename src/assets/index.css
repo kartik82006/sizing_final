@@ -2,133 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-
-:root {
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: #2C2C2C;
-  background-color: white;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-::-webkit-scrollbar {
-  display: none;
-}
-body {
-  scrollbar-width: none;     /* Firefox */
-  -ms-overflow-style: none; 
-  margin-bottom: 25vh; /* IE and Edge */
-  background-color: #FFD369;
-}
-
-
-a {
-  font-weight: 500;
-  color: #1995AD;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #1995AD;
-}
-
-.edu-nsw-act-hand-pre-400 {
-  font-family: Arial, sans-serif;
-}
-
-.edu-nsw-act-hand-pre-700 {
-  font-family: "sans-serif";
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+/* Custom slider styles */
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #2563eb;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  border: 2px solid #1e40af;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.slider::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #2563eb;
+  cursor: pointer;
+  border: 2px solid #1e40af;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-
-
-.card {
-  transform-style: preserve-3d;
-  transform:perspective(100px);
-  
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
-.card-list{
-  transform-style: preserve-3d;
-  transition: .5s;
-  filter: brightness(1);
+/* Custom focus styles */
+*:focus {
+  outline: none;
 }
 
-.card-list:hover {
-  transform: translateZ(300px);
-  transition: .5s;
-  scale:(1.5);
+*:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
 }
-.card-list:hover + *{
-  transform: translateX(3vw);
-  filter:brightness(0.75)
-  scale(0.9);
-
-}
-
-.fade-in-left {
-    opacity: 0;
-    transform: translate(50px,50px);
-    animation: fadeInLeft 1s ease-out forwards;
-  }
-
-  @keyframes fadeInLeft{
-    to {
-      opacity: 1;
-      transform: translate(0,0);
-    }
-  }
-
-  .fade-in-navbar{
-    opacity:0;
-    transform:translateY(50px);
-    animation:fadeInNavbar 1s ease-out forwards;
-  }
-  @keyframes fadeInNavbar{
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
