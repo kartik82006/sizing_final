@@ -2,6 +2,13 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
+  server:{
+    proxy:{
+      '/type': {
+        target: 'http://localhost:3000',
+      },
+    }
+  },
   plugins: [react()],
   server: {
     host: true,          // Allows access from LAN (0.0.0.0)
