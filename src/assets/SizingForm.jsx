@@ -86,7 +86,7 @@ const SizingForm = ({ selectedEvtol, formData, setFormData, resetForm }) => {
       {formFields[selectedEvtol].map((field) => (
         <div key={field.name} className={field.type === 'slider' ? 'md:col-span-2 lg:col-span-3' : ''}>
           <label className="block text-sm font-medium text-gray-300 mb-2">
-            {field.label} {field.required && <span className="text-red-400">*</span>}
+            {field.label} {field.required && <span className="text-red-400"></span>}
             {field.type === 'slider' && (
               <input
                 className="text-blue-400 ml-2 font-mono text-xs"
@@ -98,7 +98,7 @@ const SizingForm = ({ selectedEvtol, formData, setFormData, resetForm }) => {
               />
             )}
           </label>
-8
+
           {field.type === 'slider' ? (
             <div className="space-y-3">
               <input
