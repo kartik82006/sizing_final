@@ -35,7 +35,7 @@ const SizingForm = ({ selectedEvtol, formData, setFormData, resetForm }) => {
     }));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async() => {
     if (!formFields || !formFields[selectedEvtol]) {
       alert('Form fields not loaded yet.');
       return;
@@ -49,8 +49,26 @@ const SizingForm = ({ selectedEvtol, formData, setFormData, resetForm }) => {
       return;
     }
 
-    console.log('Form submitted:', formData);
-    alert('Sizing calculation submitted! (In a real application, this would process the data)');
+    try {
+  const response = await axios.post('http://localhost:3000/type/formFields/submit', {
+    evtolType: selectedEvtol,
+    data: formData
+  });
+
+  // Access the response data (this is the JSON your backend sent)
+  const result = response.data;
+
+  console.log("Server result:", result);
+  alert(result.message); // e.g., "Sizing calculation complete"
+
+  // Example usage:
+  console.log("Computed Value:", result.someComputedValue);
+} catch (error) {
+  console.error('Error submitting form:', error);
+  alert('Failed to submit sizing calculation.');
+}
+
+
     
   };
 
