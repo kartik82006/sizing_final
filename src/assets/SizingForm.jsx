@@ -33,7 +33,7 @@ const SizingForm = ({ selectedEvtol, formData, setFormData, resetForm }) => {
     setLoading(true);
     setMessage('');
     try {
-      const response = await fetch("http://localhost:8000/api/size/", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/size/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -47,7 +47,7 @@ const SizingForm = ({ selectedEvtol, formData, setFormData, resetForm }) => {
       });
 
       const result = await response.json();
-      console.log("✅ Received Results from Backend:", result);
+      console.log("  Received Results from Backend:", result);
 
       setMessage(result.message || '');
 
@@ -55,11 +55,11 @@ const SizingForm = ({ selectedEvtol, formData, setFormData, resetForm }) => {
         setData(result.results[0]);
       } else {
         setData({});
-        alert("⚠️ No results returned from server.");
+        alert(" No results returned from server.");
       }
     } catch (error) {
-      console.error("❌ Error submitting to backend:", error);
-      alert("❌ Something went wrong while calculating.");
+      console.error("  Error submitting to backend:", error);
+      alert("  Something went wrong while calculating.");
     }
     setLoading(false);
   };
@@ -168,7 +168,7 @@ const SizingForm = ({ selectedEvtol, formData, setFormData, resetForm }) => {
           </div>
 
           {message && (
-            <p className="text-green-400 text-sm mt-4">✅ {message}</p>
+            <p className="text-green-400 text-sm mt-4">  {message}</p>
           )}
 
           {Object.keys(data).length > 0 && (
