@@ -8,7 +8,7 @@ export const formFields = {
   { name: 'power_factor', label: 'Power Factor', type: 'number', step: '0.01', required: true,min:0.8, max:1.2 },
   { name: 'drag_area', label: 'Drag Area (m²)', type: 'number', step: '0.01', required: true },
   { name: 'cl', label: 'Lift Coefficient (Cl)', type: 'number', step: '0.01', required: true,min:0.5,max:1.2 },
-  { name: 'cd', label: 'Drag Coefficient (Cd)', type: 'number', step: '0.01', required: true,min:0.3,max:0.6 },
+  { name: 'cd', label: 'Drag Coefficient (Cd)', type: 'number', step: '0.01', required: true,min:0.3,max:1.2 },
   { name: 'cd_profile', label: 'Profile Drag Coefficient (Cdₚ)', type: 'number', step: '0.001', required: true,min:0.01,max:0.05 },
   { name: 'ct', label: 'Thrust Coefficient (Ct)', type: 'number', step: '0.001', required: true,min:0.001,max:0.05 },
   { name: 'cp', label: 'Power Coefficient (Cp)', type: 'number', step: '0.001', required: true,min:0.04,max:0.1 },
