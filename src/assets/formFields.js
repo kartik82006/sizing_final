@@ -2,7 +2,7 @@ export const formFields = {
   multirotor: [
   { name: 'no_of_rotor', label: 'Number of Rotors', type: 'number', required: true },
   { name: 'no_of_blade', label: 'Number of Blades', type: 'text', required: true,min:3, max: 6 },
-  { name: 'disk_loading', label: 'Disk Loading (kg/m²)', type: 'number', required: true,min:15,max:50 },
+  { name: 'bl', label: 'Disk Loading (kg/m²)', type: 'number', required: true,min:15,max:50 },
   { name: 'gtow', label: 'Gross Takeoff Weight (kg)', type: 'number', required: true, min:10 ,max:50},
   { name: 'solidity', label: 'Solidity', type: 'number', step: '0.01', required: true, min:0.12, max:0.3 },
   { name: 'power_factor', label: 'Power Factor', type: 'number', step: '0.01', required: true,min:0.8, max:1.2 },
