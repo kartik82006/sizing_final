@@ -14,6 +14,11 @@ const SizingForm = ({ selectedEvtol, formData, setFormData, resetForm }) => {
     { id: 'compound', name: 'Compound Helicopter', icon: <Calculator className="w-6 h-6" /> }
   ];
 
+  const formatKey = (key) =>
+    key
+      .replace(/_/g, ' ')
+      .replace(/\b\w/g, (char) => char.toUpperCase());
+
   const handleInputChange = (field, value) => {
     setFormData(prev => ({
       ...prev,
@@ -41,24 +46,21 @@ const SizingForm = ({ selectedEvtol, formData, setFormData, resetForm }) => {
           no_of_rotor: parseInt(formData.no_of_rotor),
           config_type: selectedEvtol,
         }),
-        
       });
 
       const result = await response.json();
-      console.log("  Received Results from Backend:", result);
+      console.log("Full backend response:", result);
 
-      setMessage(result.message || '');
-
-      if (result.results && result.results.length > 0) {
-        setData(result.results[0]);
+      if (result.results && Object.keys(result.results).length > 0) {
+        setData(result.results);
+        setMessage(result.message || '');
       } else {
         setData({});
-        alert(" No results returned from server.");
-        console.log(formData)
+        alert("No results returned from server.");
       }
     } catch (error) {
-      console.error("  Error submitting to backend:", error);
-      alert("  Something went wrong while calculating.");
+      console.error("Error submitting to backend:", error);
+      alert("Something went wrong while calculating.");
     }
     setLoading(false);
   };
@@ -99,9 +101,10 @@ const SizingForm = ({ selectedEvtol, formData, setFormData, resetForm }) => {
             {formFields[selectedEvtol].map((field) => (
               <div key={field.name} className={field.type === 'slider' ? 'md:col-span-2 lg:col-span-3' : ''}>
                 <label className="block text-md font-medium text-gray-300 mb-2">
-                  
                   {field.label} {field.required && <span className="text-red-400">*</span>}
-                   <h1 className='flex justify-between text-sm text-[#7c89a3] '>{field.min?`Range from ${field.min} to ${field.max}`: 'No range specified'}</h1>
+                  <h1 className='flex justify-between text-sm text-[#7c89a3] '>
+                    {field.min ? `Range from ${field.min} to ${field.max}` : 'No range specified'}
+                  </h1>
                   {field.type === 'slider' && (
                     <input
                       className="text-blue-400 ml-2 font-mono text-xs"
@@ -128,7 +131,6 @@ const SizingForm = ({ selectedEvtol, formData, setFormData, resetForm }) => {
                         background: `linear-gradient(to right, #2563eb 0%, #2563eb ${((formData[field.name] || field.min) - field.min) / (field.max - field.min) * 100}%, #4b5563 ${((formData[field.name] || field.min) - field.min) / (field.max - field.min) * 100}%, #4b5563 100%)`
                       }}
                     />
-                   
                     <div className="flex justify-between text-xs text-gray-400">
                       <span>{field.min}</span>
                       <span className="text-gray-300">Typical Range: 200-500 N/m²</span>
@@ -167,7 +169,7 @@ const SizingForm = ({ selectedEvtol, formData, setFormData, resetForm }) => {
           </div>
 
           {message && (
-            <p className="text-green-400 text-sm mt-4">  {message}</p>
+            <p className="text-green-400 text-sm mt-4">{message}</p>
           )}
 
           {Object.keys(data).length > 0 && (
@@ -180,8 +182,8 @@ const SizingForm = ({ selectedEvtol, formData, setFormData, resetForm }) => {
                     key={key}
                     className="flex justify-between text-sm text-gray-300 border-b border-gray-700 py-1"
                   >
-                    <span className="text-gray-400">{key}</span>
-                    <span>{value}</span>
+                    <span className="text-gray-400">{formatKey(key)}</span>
+                    <span>{typeof value === 'number' ? value.toFixed(2) : value}</span>
                   </div>
                 ))}
               </div>
