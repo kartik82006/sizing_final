@@ -39,11 +39,9 @@ const SizingForm = ({ selectedEvtol, formData, setFormData, resetForm }) => {
         body: JSON.stringify({
           ...formData,
           no_of_rotor: parseInt(formData.no_of_rotor),
-          blade_options: formData.blade_options
-            ? formData.blade_options.split(',').map(n => parseInt(n.trim()))
-            : [3, 4, 6],
           config_type: selectedEvtol,
         }),
+        
       });
 
       const result = await response.json();
@@ -56,6 +54,7 @@ const SizingForm = ({ selectedEvtol, formData, setFormData, resetForm }) => {
       } else {
         setData({});
         alert(" No results returned from server.");
+        console.log(formData)
       }
     } catch (error) {
       console.error("  Error submitting to backend:", error);
