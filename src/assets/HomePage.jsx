@@ -3,31 +3,31 @@ import { Plane, Calculator, Zap, Wind, Target, Settings, BarChart3, FileText, Us
 
 const HomePage = ({ setCurrentPage }) => {
   const evtolTypes = [
-    {
-      id: 'multirotor',
-      name: 'Multirotor',
-      description: 'Multiple rotors for vertical takeoff and landing',
-      icon: <Wind className="w-6 h-6" />
-    },
-    {
-      id: 'tiltwing',
-      name: 'Tilt-Wing',
-      description: 'Wings that rotate for vertical and horizontal flight',
-      icon: <Plane className="w-6 h-6" />
-    },
-    {
-      id: 'tiltrotor',
-      name: 'Tilt-Rotor',
-      description: 'Rotors that tilt for efficient forward flight',
-      icon: <Zap className="w-6 h-6" />
-    },
-    {
-      id: 'compound',
-      name: 'Compound Helicopter',
-      description: 'Traditional helicopter with additional propulsion',
-      icon: <Calculator className="w-6 h-6" />
-    }
-  ];
+      {
+        id: 'multirotor',
+        name: 'Multirotor',
+        description: 'Multiple rotors for vertical takeoff and landing',
+        icon: <Wind className="w-6 h-6" />
+      },
+      {
+        id: 'liftpluscruise',
+        name: 'Lift + Cruise',
+        description: 'Wings that rotate for vertical and horizontal flight',
+        icon: <Plane className="w-6 h-6" />
+      },
+      {
+        id: 'tiltrotor',
+        name: 'Tilt-Rotor',
+        description: 'Rotors that tilt for efficient forward flight',
+        icon: <Zap className="w-6 h-6" />
+      },
+      {
+        id: 'single_main_rotor',
+        name: 'Single Main Rotor',
+        description: 'Traditional helicopter with a single main rotor',
+        icon: <Calculator className="w-6 h-6" />
+      }
+    ];
 
   return (
     <div className="min-h-screen bg-gray-900">

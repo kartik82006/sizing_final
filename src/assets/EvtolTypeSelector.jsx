@@ -10,8 +10,8 @@ const EvtolTypeSelector = ({ setSelectedEvtol }) => {
       icon: <Wind className="w-6 h-6" />
     },
     {
-      id: 'tiltwing',
-      name: 'Tilt-Wing',
+      id: 'liftpluscruise',
+      name: 'Lift + Cruise',
       description: 'Wings that rotate for vertical and horizontal flight',
       icon: <Plane className="w-6 h-6" />
     },
@@ -22,9 +22,9 @@ const EvtolTypeSelector = ({ setSelectedEvtol }) => {
       icon: <Zap className="w-6 h-6" />
     },
     {
-      id: 'compound',
-      name: 'Compound Helicopter',
-      description: 'Traditional helicopter with additional propulsion',
+      id: 'single_main_rotor',
+      name: 'Single Main Rotor',
+      description: 'Traditional helicopter with a single main rotor',
       icon: <Calculator className="w-6 h-6" />
     }
   ];
