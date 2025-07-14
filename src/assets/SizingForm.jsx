@@ -98,58 +98,51 @@ const SizingForm = ({ selectedEvtol, formData, setFormData, resetForm }) => {
 
         <div className="p-6 space-y-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {formFields[selectedEvtol].map((field) => (
-              <div key={field.name} className={field.type === 'slider' ? 'md:col-span-2 lg:col-span-3' : ''}>
-                <label className="block text-md font-medium text-gray-300 mb-2">
-                  {field.label} {field.required && <span className="text-red-400">*</span>}
-                  <h1 className='flex justify-between text-sm text-[#7c89a3] '>
-                    {field.min ? `Range from ${field.min} to ${field.max}` : 'No range specified'}
-                  </h1>
-                  {field.type === 'slider' && (
-                    <input
-                      className="text-blue-400 ml-2 font-mono text-xs"
-                      type='number'
-                      min={field.min}
-                      max={field.max}
-                      value={formData[field.name] || field.min}
-                      onChange={(e) => handleInputChange(field.name, parseInt(e.target.value, 10))}
-                    />
-                  )}
-                </label>
+  {formFields[selectedEvtol].map((field) => (
+    <div key={field.name} className={field.type === 'slider' ? 'md:col-span-2 lg:col-span-3' : ''}>
+      <label className="block text-md font-medium text-gray-300 mb-2">
+        {field.label} {field.required && <span className="text-red-400">*</span>}
+        <h1 className='flex justify-between text-sm text-[#7c89a3]'>
+          {field.min !== undefined ? `Range from ${field.min} to ${field.max}` : 'Enter as per Requirements'}
+        </h1>
+      </label>
 
-                {field.type === 'slider' ? (
-                  <div className="space-y-3">
-                    <input
-                      type="range"
-                      min={field.min}
-                      max={field.max}
-                      step={field.step}
-                      value={formData[field.name] || field.min}
-                      onChange={(e) => handleInputChange(field.name, e.target.value)}
-                      className="w-full h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer slider"
-                      style={{
-                        background: `linear-gradient(to right, #2563eb 0%, #2563eb ${((formData[field.name] || field.min) - field.min) / (field.max - field.min) * 100}%, #4b5563 ${((formData[field.name] || field.min) - field.min) / (field.max - field.min) * 100}%, #4b5563 100%)`
-                      }}
-                    />
-                    <div className="flex justify-between text-xs text-gray-400">
-                      <span>{field.min}</span>
-                      <span className="text-gray-300">Typical Range: 200-500 N/m²</span>
-                      <span>{field.max}</span>
-                    </div>
-                  </div>
-                ) : (
-                  <input
-                    type={field.type}
-                    step={field.step}
-                    value={formData[field.name] || ''}
-                    onChange={(e) => handleInputChange(field.name, e.target.value)}
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder={`Enter ${field.label.toLowerCase()}`}
-                  />
-                )}
-              </div>
-            ))}
-          </div>
+      {/* Slider input (special case) */}
+      {field.type === 'slider' && (
+        <input
+          className="text-blue-400 ml-2 font-mono text-xs"
+          type="number"
+          min={field.min}
+          max={field.max}
+          step={field.step || 'any'}
+          value={formData[field.name] || field.min}
+          onChange={(e) => handleInputChange(field.name, parseFloat(e.target.value))}
+        />
+      )}
+
+      {/* General input for type !== slider */}
+      {field.type !== 'slider' && (
+        <input
+          className="w-full px-3 py-2 text-white bg-[#1f2a39] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          type={field.type}
+          name={field.name}
+          required={field.required}
+          min={field.min}
+          max={field.max}
+          step={field.step || 'any'}
+          value={formData[field.name] || ''}
+          onChange={(e) =>
+            handleInputChange(
+              field.name,
+              field.type === 'number' ? parseFloat(e.target.value) : e.target.value
+            )
+          }
+        />
+      )}
+    </div>
+  ))}
+</div>
+
 
           <div className="border-t border-gray-700 pt-6">
             <div className="flex flex-col sm:flex-row gap-4">
