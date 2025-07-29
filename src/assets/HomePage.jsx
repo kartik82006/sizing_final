@@ -1,5 +1,6 @@
 import React from 'react';
-import { Plane, Calculator, Zap, Wind, Target, Settings, BarChart3, FileText, Users, Shield } from 'lucide-react';
+import { Plane, Target, Settings, BarChart3, FileText, Users, Shield, PlaneTakeoff,Drone } from 'lucide-react';
+import HelipadIcon from './HelipadIcon';
 
 const HomePage = ({ setCurrentPage }) => {
   const evtolTypes = [
@@ -7,7 +8,7 @@ const HomePage = ({ setCurrentPage }) => {
         id: 'multirotor',
         name: 'Multirotor',
         description: 'Multiple rotors for vertical takeoff and landing',
-        icon: <Wind className="w-6 h-6" />
+        icon: <Drone className="w-6 h-6" />
       },
       {
         id: 'liftpluscruise',
@@ -19,13 +20,13 @@ const HomePage = ({ setCurrentPage }) => {
         id: 'tiltrotor',
         name: 'Tilt-Rotor',
         description: 'Rotors that tilt for efficient forward flight',
-        icon: <Zap className="w-6 h-6" />
+        icon: <PlaneTakeoff className="w-6 h-6" />
       },
       {
         id: 'single_main_rotor',
         name: 'Single Main Rotor',
         description: 'Traditional helicopter with a single main rotor',
-        icon: <Calculator className="w-6 h-6" />
+        icon: <HelipadIcon className="m-0 p-0" />
       }
     ];
 
@@ -41,8 +42,8 @@ const HomePage = ({ setCurrentPage }) => {
                 <Plane className="w-10 h-10 text-white" />
               </div>
             </div>
-            <h1 className="text-5xl font-bold text-white mb-6 tracking-tight">
-              eVTOL Aircraft Sizing Platform
+            <h1 className="text-7xl font-bold text-white mb-6 tracking-tight">
+              AeroCalc
             </h1>
             <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-3xl mx-auto">
               Professional computational tools for electric vertical takeoff and landing aircraft design. 
@@ -76,7 +77,7 @@ const HomePage = ({ setCurrentPage }) => {
             {evtolTypes.map((type) => (
               <div key={type.id} className="bg-gray-700 border border-gray-600 rounded-lg p-6 hover:bg-gray-600 transition-colors duration-200">
                 <div className="flex items-center mb-4">
-                  <div className="text-blue-400 mr-3">
+                  <div className="text-blue-400 mr-2">
                     {type.icon}
                   </div>
                   <h3 className="text-lg font-semibold text-white">{type.name}</h3>

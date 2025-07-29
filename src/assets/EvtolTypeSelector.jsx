@@ -1,5 +1,6 @@
 import React from 'react';
-import { Calculator, Zap, Wind, Plane } from 'lucide-react';
+import { Calculator, PlaneTakeoff, Plane, Drone } from 'lucide-react';
+import HelipadIcon from "./HelipadIcon";
 
 const EvtolTypeSelector = ({ setSelectedEvtol }) => {
   const evtolTypes = [
@@ -7,7 +8,7 @@ const EvtolTypeSelector = ({ setSelectedEvtol }) => {
       id: 'multirotor',
       name: 'Multirotor',
       description: 'Multiple rotors for vertical takeoff and landing',
-      icon: <Wind className="w-6 h-6" />
+      icon: <Drone className="w-6 h-6" />
     },
     {
       id: 'liftpluscruise',
@@ -19,13 +20,13 @@ const EvtolTypeSelector = ({ setSelectedEvtol }) => {
       id: 'tiltrotor',
       name: 'Tilt-Rotor',
       description: 'Rotors that tilt for efficient forward flight',
-      icon: <Zap className="w-6 h-6" />
+      icon: <PlaneTakeoff className="w-6 h-6" />
     },
     {
       id: 'single_main_rotor',
       name: 'Single Main Rotor',
       description: 'Traditional helicopter with a single main rotor',
-      icon: <Calculator className="w-6 h-6" />
+      icon: <HelipadIcon className="w-6 h-6" />
     }
   ];
 
