@@ -45,7 +45,7 @@ liftpluscruise: [
   { name: 'gtow', label: 'Gross Takeoff Weight (kg)', type: 'number', required: true },
   { name: 'no_of_rotor', label: 'Number of Rotors', type: 'number', required: true, min: 2, max: 10 },
   { name: 'no_of_blade', label: 'Number of Blades per Rotor', type: 'number', required: true, min: 2, max: 6 },
-  { name: 'disk loading', label: 'Disk Loading (kg/m²)', type: 'number', required: true, min: 10, max: 1000 },
+  { name: 'disk loading', label: 'Disk Loading (kg/m²)', type: 'number', required: true, min: 10, max: 100 },
   { name: 'wing_loading', label: 'Wing Loading (kg/m²)', type: 'number', required: true, min: 50, max: 300 },
   { name: 'solidity', label: 'Rotor Solidity', type: 'number', required: true, step: 0.01, min: 0.05, max: 0.3 },
   { name: 'cl', label: 'Lift Coefficient (Cl)', type: 'number', required: true, step: 0.01, min: 0.5, max: 1.5 },
