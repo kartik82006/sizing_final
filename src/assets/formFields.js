@@ -14,7 +14,6 @@ export const formFields = {
   { name: 'cp', label: 'Power Coefficient (Cp)', type: 'number', step: '0.001', required: true,min:0.04,max:0.1 },
   { name: 'induced_power_factor', label: 'Induced Power Factor', type: 'number', step: '0.01', required: true,min:1.15,max:1.25 },
   { name: 'rate_of_climb', label: 'Rate of Climb (m/s)', type: 'number', step: '0.1', required: true,min:2.5,max:8 },
-  { name: 'v_hover', label: 'Hover Velocity (m/s)', type: 'number', step: '0.1', required: true },
   { name: 'v_tip_cruise', label: 'Tip Velocity (Cruise) (m/s)', type: 'number', required: true, min:0, max:150 },
   { name: 'v_tip_climb', label: 'Tip Velocity (Climb) (m/s)', type: 'number', required: true, min:0, max:170 },
   { name: 'rho', label: 'Air Density (kg/m³)', type: 'number', step: '0.001', required: true },
